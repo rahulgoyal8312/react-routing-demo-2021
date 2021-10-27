@@ -1,9 +1,10 @@
 import { Fragment } from "react"
-import { useHistory, useLocation } from "react-router"
+import { useHistory, useLocation, useParams } from "react-router"
 
 const ProductItem = () => {
     const history = useHistory();
     const location = useLocation()
+    const params = useParams()
 
     const handleRedirection = () => {
         // console.log(history)
@@ -15,7 +16,7 @@ const ProductItem = () => {
 
     return (
         <Fragment>
-            <h1>Product Item 1</h1>
+            <h1>Product Item {params.id}</h1>
             <button onClick={handleRedirection}>Go Back to Product Page</button>
         </Fragment>
     )

@@ -9,6 +9,22 @@ const Product = () => {
                 <li>
                     {/* <a href="/product/1">Product Item 1</a> */}
                     {/* <Link to={"/product/1"}>Product Item 1</Link> */}
+                    <NavLink activeClassName="active" to={"/product/abc"}>Product Category 1</NavLink>
+                </li>
+                <li>
+                    <NavLink activeClassName="active" to={"/product/abcd"}>Product Category 2</NavLink>
+                </li>
+                <li>
+                    <NavLink activeClassName="active" to={"/product/abcde"}>Product Category 3</NavLink>
+                </li>
+                <li>
+                    <NavLink activeClassName="active" to={"/product/abcdef"}>Product Category 4</NavLink>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    {/* <a href="/product/1">Product Item 1</a> */}
+                    {/* <Link to={"/product/1"}>Product Item 1</Link> */}
                     <NavLink activeClassName="active" to={"/product/1"}>Product Item 1</NavLink>
                 </li>
                 <li>
