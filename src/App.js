@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./component/Home";
 import Product from "./component/Product";
 import ProductItem from "./component/ProductItem";
 
@@ -13,8 +14,10 @@ const App = () => {
           <Route path="/product">
             <Product/>
           </Route>
+          <Route>
+            <Home/>
+          </Route>
         </Switch>
-        <h1>Go to Product Page</h1>
       </div>
     </BrowserRouter>
   );
