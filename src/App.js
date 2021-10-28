@@ -9,12 +9,12 @@ const App = () => {
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path="/product/:id([0-9]+)">
+          {/* <Route path="/product/:id([0-9]+)">
             <ProductItem/>
           </Route>
           <Route path="/product/:category([a-zA-Z]+)/:subcategory?">
             <ProductCategory/>
-          </Route>
+          </Route> */}
           <Route path="/product">
             <Product/>
           </Route>
