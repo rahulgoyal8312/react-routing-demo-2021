@@ -3,6 +3,7 @@ import Home from "./component/Home";
 import Product from "./component/Product";
 import ProductItem from "./component/ProductItem";
 import ProductCategory from "./component/ProductCategory"
+import NotFound from "./component/NotFound"
 
 const App = () => {
   return (
@@ -18,8 +19,11 @@ const App = () => {
           <Route path="/product">
             <Product/>
           </Route>
-          <Route>
+          <Route path="/" exact>
             <Home/>
+          </Route>
+          <Route path="/404">
+            <NotFound/>
           </Route>
         </Switch>
       </div>

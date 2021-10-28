@@ -1,7 +1,16 @@
 import { Fragment } from "react"
-import { Link, NavLink, Switch, Route, useRouteMatch, generatePath } from "react-router-dom"
+import { 
+    Link, 
+    NavLink, 
+    Switch, 
+    Route, 
+    useRouteMatch, 
+    generatePath, 
+    Redirect 
+} from "react-router-dom"
 import ProductItem from "./ProductItem"
 import ProductCategory from "./ProductCategory"
+import NotFound from "./NotFound"
 
 const Product = () => {
     const { url, path } = useRouteMatch()
@@ -15,7 +24,7 @@ const Product = () => {
                 <Route path={`${path}/:category([a-zA-Z]+)/:subcategory?`}>
                     <ProductCategory/>
                 </Route>
-                <Route path="/">
+                <Route path={path} exact>
                     <h1>Product Component</h1>
                     <ul>
                         <li>
@@ -53,6 +62,12 @@ const Product = () => {
                         </li>
                     </ul>
                 </Route>
+                {/* <Redirect to={"/"} from="/product/123abc"/>
+                <Redirect to={"/product"}/> */}
+                {/* <Route>
+                    <NotFound/>
+                </Route> */}
+                <Redirect to={"/404"}/>
             </Switch>
         </Fragment>
     )
