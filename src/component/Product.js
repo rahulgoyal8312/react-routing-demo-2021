@@ -6,7 +6,8 @@ import {
     Route, 
     useRouteMatch, 
     generatePath, 
-    Redirect 
+    Redirect, 
+    useLocation
 } from "react-router-dom"
 import ProductItem from "./ProductItem"
 import ProductCategory from "./ProductCategory"
@@ -14,6 +15,9 @@ import NotFound from "./NotFound"
 
 const Product = () => {
     const { url, path } = useRouteMatch()
+    const { search } = useLocation()
+    const queryParams = new URLSearchParams(search)
+    const enteredSearch = queryParams.get("search")
 
     return (
         <Fragment>
@@ -26,6 +30,7 @@ const Product = () => {
                 </Route>
                 <Route path={path} exact>
                     <h1>Product Component</h1>
+                    { enteredSearch && <h2>Searched Query: {enteredSearch}</h2> }
                     <ul>
                         <li>
                             {/* <a href="/product/1">Product Item 1</a> */}
